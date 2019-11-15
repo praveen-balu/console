@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    {% load static %}
+    <script type="text/javascript" src="{% static 'fusioncharts/fusioncharts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'fusioncharts/fusioncharts.theme.fint.js' %}"></script>
+    <style>
+        .carousel .background {
+            background-position: center center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            height: 700px;
+        }
+        
+        .carousel .background.a {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/images/pexels-photo-1308624.jpeg");
+        }
+        
+        @media all and (transform-3d),
+        (-webkit-transform-3d) {
+            .carousel-fade .carousel-inner>.item.next.left,
+            .carousel-fade .carousel-inner>.item.prev.right,
+            .carousel-fade .carousel-inner>.item.active {
+                opacity: 1;
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        
+        .covertext {
+            position: absolute;
+            top: 300px;
+            left: 0px;
+            right: 0px;
+        }
+        
+        .explore {
+            text-align: center;
+            margin-top: -90px;
+            margin-left: 30%;
+            /* margin-left: 10%; */
+            /* padding: 20% */
+        }
+        
+        .explore .btn-lg,
+        .explore .btn-lg:hover {
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 22px;
+            background-image: transparent;
+            background-color: transparent;
+            border-color: rgb(241, 233, 230);
+            color: rgb(234, 234, 241);
+            align-items: center
+        }
+        
+        .carousel-inner {
+            /* border-radius:0px; */
+            padding-left: 10px10px;
+            font-size: 22px;
+            background-image: transparent;
+            background-color: black;
+            border-color: rgba(20, 17, 231, 0.5);
+            color: rgb(13, 28, 228);
+        }
+        
+        .title {
+            border-radius: 0px;
+            padding: 10px 10px;
+            font-size: 30px;
+            background-image: transparent;
+            background-color: black;
+            border-color: rgba(230, 230, 235, 0.5);
+            color: ghostwhite;
+        }
+        /* .form-control{
+             padding: 15px 25px;
+            } */
+    </style>
+
+</head>
+
+
+<body>
+    <div id="myCarousel" class="carousel carousel-fade slide">
+        <div class="carousel-inner">
+            <div class="title row">
+                <div class="col-md-6 d-flex justify-content-start">
+                    <p>ChartView</p>
+                </div>
+                <div class="col-md-6 d-flex justify-content-end">
+                    <a href="/"><button type="button" class="btn btn-light explorebtn">HOME</button></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- FusionCharts will render here-->
+    <div id="chart-1" class="d-flex justify-content-center"></div>
+    <!-- dumping JavaScript code here -->
+    {{ output|safe }}
+</body>
+
+</html>
